@@ -41,5 +41,6 @@ test('should click around', async () => {
 
     await page.click('input#age');
     await page.type('input#age', '28');
-    
+
+    await page.click('#btnAddUser');
 });
