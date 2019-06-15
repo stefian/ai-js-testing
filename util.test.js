@@ -22,3 +22,16 @@ test('should generate a valid text output', () => {
     const text = checkAndGenerate('Steve', 29);
     expect(text).toBe('Steve (29 years old)');
 });
+
+// launch Puppeteer Chrome for automated e2e testing
+test('should click around', async () => {
+    const browser = await puppeteer.launch({
+        headless: false,
+        slowMo: 80,
+        args: ['--window-size=1920,1080']
+    });
+    const page = await browser.newPage();
+    await page.goto(
+        'http://127.0.0.1:5501/index.html'
+    );
+});
