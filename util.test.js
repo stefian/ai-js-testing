@@ -34,4 +34,12 @@ test('should click around', async () => {
     await page.goto(
         'http://127.0.0.1:5501/index.html'
     );
+
+    // Browser launched - Execute steps:
+    await page.click('input#name');
+    await page.type('input#name', 'Ada');
+
+    await page.click('input#age');
+    await page.type('input#age', '28');
+    
 });
